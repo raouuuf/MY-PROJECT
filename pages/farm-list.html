@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FeedTech | Farm Animals</title>
+  <link rel="stylesheet" href="../css/index.css">
+  <link rel="stylesheet" href="../css/user.css">
+ <link rel="stylesheet" href="../css/farm.css?v=3">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Marko+One&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- LOGO -->
+  <div class="logo">
+    <img src="../assets/logo.svg" class="logo">
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <ul>
+      <li><a href="user.html">Home</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#platforms">Our Platforms</a></li>
+      <li><a href="#how">How It Works</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ul>
+    <a href="../index.html" class="sign-in-btn">Logout</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>FEED SMARTER,<br>GROW BETTER</h1>
+      <p>Effortlessly scan each animal's tag to access real-time data, feeding needs, and personalized nutrition plans—all in one smart platform for modern farms.</p>
+      <button class="cta-btn">Get started</button>
+    </div>
+    <div class="hero-image">
+      <img src="../assets/background.png" class="bg-img">
+      <img src="../assets/cows.png" class="overlay-img">
+    </div>
+  </section>
+
+  <!-- FARM LIST -->
+  <section class="farm-list-section">
+    <h1>My Farm Animals</h1>
+
+    <div class="farm-table">
+
+      <div class="farm-row header">
+        <span>Race</span>
+        <span>ID</span>
+        <span>Sexe</span>
+        <span>Année</span>
+        <span>Poids</span>
+        <span>État</span>
+        <span>NEC</span>
+        <span>Stabulation</span>
+      </div>
+
+      <!-- ANIMAL 1 -->
+      <a href="#" class="farm-row animal-row"
+         data-name="Daisy"
+         data-race="Holstein"
+         data-id="0001"
+         data-sex="Femelle"
+         data-year="2022"
+         data-weight="500 kg"
+         data-state="Lactation"
+         data-nec="3"
+         data-stab="Libre">
+
+        <span>Holstein</span>
+        <span>0001</span>
+        <span>Femelle</span>
+        <span>2022</span>
+        <span>500 kg</span>
+        <span>Lactation</span>
+        <span>3</span>
+        <span>Libre</span>
+      </a>
+
+      <!-- ANIMAL 2 -->
+      <a href="#" class="farm-row animal-row"
+         data-name="Max"
+         data-race="Holstein"
+         data-id="0002"
+         data-sex="Mâle"
+         data-year="2021"
+         data-weight="610 kg"
+         data-state="Entretien"
+         data-nec="3"
+         data-stab="Entravé">
+
+        <span>Holstein</span>
+        <span>0002</span>
+        <span>Mâle</span>
+        <span>2021</span>
+        <span>610 kg</span>
+        <span>Entretien</span>
+        <span>3</span>
+        <span>Entravé</span>
+      </a>
+
+      <!-- ANIMAL 3 -->
+      <a href="#" class="farm-row animal-row"
+         data-name="Luna"
+         data-race="Montbéliarde"
+         data-id="0003"
+         data-sex="Femelle"
+         data-year="2023"
+         data-weight="450 kg"
+         data-state="Croissance"
+         data-nec="2.8"
+         data-stab="Libre">
+
+        <span>Montbéliarde</span>
+        <span>0003</span>
+        <span>Femelle</span>
+        <span>2023</span>
+        <span>450 kg</span>
+        <span>Croissance</span>
+        <span>2.8</span>
+        <span>Libre</span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- PROFILE OVERLAY -->
+<!-- PROFILE OVERLAY -->
+<div id="animalProfileOverlay" class="how-section">
+  <div class="profile-card">
+    <button id="closeProfile" class="close-btn">✖</button>
+
+    <h3 id="animalName"></h3>
+
+    <ul class="animal-data">
+      <li><strong>Race :</strong> <span id="race"></span></li>
+      <li><strong>ID :</strong> <span id="animalId"></span></li>
+      <li><strong>Sexe :</strong> <span id="sex"></span></li>
+      <li><strong>Année :</strong> <span id="year"></span></li>
+      <li><strong>Poids :</strong> <span id="weight"></span></li>
+      <li><strong>État :</strong> <span id="state"></span></li>
+      <li><strong>NEC :</strong> <span id="nec"></span></li>
+      <li><strong>Stabulation :</strong> <span id="stabulation"></span></li>
+    </ul>
+
+    <button class="cta-btn">delete or modify</button>
+  </div>
+</div>
+   <!-- FAQ Section -->
+    <section class="faq-section">
+        <h2>FAQ</h2>
+        <div class="faq-list">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How does the scanning work?</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    Our system uses NFC (Near Field Communication) technology. Simply tap your phone against your animal's tag to access their complete information and receive personalized feeding recommendations.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Do I need internet for the platform to work?</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    An internet connection is recommended for real-time data syncing. However, the app supports offline mode where you can still scan tags and access cached data.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What information can I see about each animal?</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    You can access health status, feeding history, nutritional requirements, weight tracking, vaccination records, and personalized recommendations for each animal.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can it be used for large farms?</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    Yes! FeedTech is designed to scale from small family farms to large commercial operations with hundreds or thousands of animals.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How accurate are the feeding recommendations?</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    Our AI algorithms are trained on thousands of farms and updated continuously. Accuracy improves over time as the system learns your farm's specific conditions and preferences.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Footer -->
+    <section class="cta-footer">
+        <h2>START SMARTER FEEDING<br>TODAY</h2>
+        <p>Join thousands of farmers already using FeedTech to optimize their operations</p>
+        <button class="cta-btn">Get started</button>
+
+        <div class="footer-content">
+            <div class="footer-left">
+                <div style="margin-top: 40px;">
+                    <div class="logo">FeedTech</div>
+                    <div class="social-links">
+                        <a href="#" title="Facebook">f</a>
+                        <a href="#" title="Twitter">𝕏</a>
+                        <a href="#" title="Instagram">📷</a>
+                        <a href="#" title="LinkedIn">in</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-right">
+                <div class="footer-col">
+                    <h3>About us</h3>
+                    <a href="#">Our Story</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Careers</a>
+                </div>
+                <div class="footer-col">
+                    <h3>Our Platforms</h3>
+                    <a href="#">FeedTech Pro</a>
+                    <a href="#">Analytics</a>
+                    <a href="#">API</a>
+                </div>
+                <div class="footer-col">
+                    <h3>How it Works</h3>
+                    <a href="#">Features</a>
+                    <a href="#">Pricing</a>
+                    <a href="#">Support</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+  <!-- JS -->
+  <script>
+    const rows = document.querySelectorAll('.animal-row');
+    const overlay = document.getElementById('animalProfileOverlay');
+    const closeBtn = document.getElementById('closeProfile');
+
+    rows.forEach(row => {
+      row.addEventListener('click', e => {
+        e.preventDefault();
+
+        document.getElementById('animalName').textContent = row.dataset.name;
+        document.getElementById('race').textContent = row.dataset.race;
+        document.getElementById('animalId').textContent = row.dataset.id;
+        document.getElementById('sex').textContent = row.dataset.sex;
+        document.getElementById('year').textContent = row.dataset.year;
+        document.getElementById('weight').textContent = row.dataset.weight;
+        document.getElementById('state').textContent = row.dataset.state;
+        document.getElementById('nec').textContent = row.dataset.nec;
+        document.getElementById('stabulation').textContent = row.dataset.stab;
+
+        overlay.style.display = 'flex';
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      overlay.style.display = 'none';
+    });
+  </script>
+
+
+
+</body>
+</html>

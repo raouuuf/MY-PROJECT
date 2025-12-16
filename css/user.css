@@ -1,0 +1,190 @@
+/* ==========  user.css  –  dashboard-only tweaks  ========== */
+
+/* 1.  hero clean-up */
+.hero { background: transparent; }
+
+/* 2.  centre the step cards */
+.steps {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* 3.  step card colours & link reset */
+.how-section.green-layer .step h3 { color: #6b9e6e; }
+.how-section.green-layer .step p  { color: #1a1a1a; }
+.how-section.green-layer .step    { text-decoration: none; }
+
+/* 4.  hover lift */
+.step:hover { transform: translateY(-4px); }
+
+/* ===== scan / search overlay ===== */
+.scan-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.85);
+  display: none;
+  place-items: center;
+  z-index: 1000;
+}
+
+.scan-content {
+  background: #fff;
+  padding: 50px 40px;
+  border-radius: 25px;
+  text-align: center;
+  max-width: 500px;
+  width: 90%;
+  animation: slideIn .8s ease-out forwards;
+  opacity: 0;
+  transform: translateY(-50px);
+}
+
+.scan-content h1 {
+  font-family: "Marko One", serif;
+  font-size: 28px;
+  color: #6b9e6e;
+  margin-bottom: 20px;
+}
+
+.scan-content p { font-size: 16px; color: #333; margin-bottom: 30px; }
+
+.success {
+  display: none;
+  font-size: 20px;
+  color: #fff;
+  background: #6b9e6e;
+  padding: 15px 20px;
+  border-radius: 15px;
+  margin-top: 20px;
+  animation: popIn .5s ease forwards;
+}
+
+@keyframes slideIn { to { opacity: 1; transform: translateY(0); } }
+@keyframes popIn   { 0% { transform: scale(0); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+
+/* ===== animal profile overlay ===== */
+#animalProfileOverlay {
+  position: fixed;
+  inset: 0;
+  display: none;
+  place-items: center;
+  background: rgba(0,0,0,.5);
+  z-index: 9999;
+  overflow-y: auto;
+  padding: 40px 0;
+}
+
+#animalProfileOverlay .profile-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 40px;
+  width: 90%;
+  max-width: 520px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.15);
+  font-family: "Montserrat", sans-serif;
+  color: #1a1a1a;
+}
+
+#animalProfileOverlay .profile-card h3 {
+  font-family: "Marko One", serif;
+  font-size: 28px;
+  color: #6b9e6e;
+  text-align: center;
+  margin: 0 0 25px;
+}
+
+/* two-column data list */
+.animal-data {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px;
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 10px 20px;
+  font-size: 16px;
+}
+.animal-data li { display: contents; }
+.animal-data strong { color: #555; }
+
+/* green CTA button (same as homepage) */
+.profile-buttons,
+.recommendations-heading {
+  text-align: center;
+}
+
+.profile-buttons .cta-btn,
+.recommendations-heading + .cta-btn {
+  display: inline-block;
+  padding: 14px 32px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #fff;
+  background: #6b9e6e;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background .25s ease;
+}
+
+.profile-buttons .cta-btn:hover,
+.recommendations-heading + .cta-btn:hover {
+  background: #5a8c5d;
+}
+/* ====== presentation-safe profile reset ====== */
+#animalProfileOverlay { display:none; } /* js will flip to flex */
+.profile-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 40px;
+  width: 90%;
+  max-width: 520px;
+  margin: auto;
+  box-shadow: 0 10px 30px rgba(0,0,0,.15);
+  font-family: "Montserrat",sans-serif;
+  color: #1a1a1a;
+  position: relative;
+}
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 24px;
+  color: #999;
+  background: none; border: none; cursor: pointer;
+}
+.profile-card h3 {
+  font-family: "Marko One",serif;
+  font-size: 28px;
+  color: #6b9e6e;
+  text-align: center;
+  margin: 0 0 25px;
+}
+.animal-data {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px;
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 10px 20px;
+  font-size: 16px;
+}
+.animal-data strong { color: #555; }
+.profile-buttons,
+.recommendations-heading { text-align: center; margin: 20px 0 10px; }
+.cta-btn {
+  display: inline-block;
+  padding: 14px 32px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #fff;
+  background: #6b9e6e;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background .25s ease;
+}
+.cta-btn:hover { background: #5a8c5d; }

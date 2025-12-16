@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FeedTech | Stock Dashboard</title>
+  <link rel="stylesheet" href="../css/index.css">
+  <link rel="stylesheet" href="../css/user.css">
+  <link href="https://fonts.googleapis.com/css2?family=Marko+One&family=Montserrat:wght@400 ;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- page-specific mini-sheet -->
+  <style>
+    /* ===== CENTER & SPACING ===== */
+    .manage-section { padding: 60px 20px; }
+    .manage-grid    { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto; }
+
+    /* ===== PRO CARD ===== */
+    .manage-card {
+      background: #fff;
+      border-radius: 25px;
+      padding: 35px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.08);
+      text-align: center;
+      transition: transform .3s;
+    }
+    .manage-card:hover { transform: translateY(-5px); }
+
+    .manage-card h3   { font-family: 'Marko One', serif; color: #6b9e6e; margin-bottom: 20px; font-size: 22px; }
+    .manage-card p    { font-size: 15px; color: #666; margin-bottom: 25px; }
+    .manage-card input{ width: 100%; padding: 12px 15px; margin-bottom: 12px; border: 1.5px solid #e0e0e0; border-radius: 12px; font-size: 15px; }
+    .manage-card .cta-btn { width: 100%; padding: 14px; font-size: 16px; border-radius: 12px; }
+
+    /* ===== SUMMARY TABLE ===== */
+    .recap-table {
+      width: 100%;
+      margin-top: 25px;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    .recap-table th,
+    .recap-table td { padding: 10px 12px; border-bottom: 1px solid #e0e0e0; }
+    .recap-table th { background: #f2f7ee; color: #6b9e6e; font-weight: 600; }
+    .recap-table td { color: #333; }
+    .recap-table tr:last-child td { border: none; }
+
+    /* ===== BACK BUTTON ===== */
+    .back-btn { margin-top: 40px; text-align: center; }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <div class="logo"><img src="../assets/logo.svg" alt="FeedTech Logo"></div>
+  <nav>
+    <ul>
+      <li><a href="user.html">Home</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#platforms">Our Platforms</a></li>
+      <li><a href="#how">How It Works</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ul>
+    <a href="../index.html" class="sign-in-btn">Logout</a>
+  </nav>
+  <section class="hero">
+        <div class="hero-content">
+      <h1>STOCK DASHBOARD</h1>
+      <p>Track concentrates, fodder and supplies in real time.</p>
+        
+        </div>
+       <div class="hero-image">
+    <img src="../assets/background.png" class="bg-img">
+    <img src="../assets/cows.png" class="overlay-img">
+</div>
+    </section>
+
+ 
+
+  <!-- DASHBOARD -->
+  <section class="how-section green-layer manage-section">
+    <h2>Stock Management</h2>
+    <div class="steps manage-grid">
+
+      <!-- CARD 1 : STOCK STATUS -->
+      <div class="step manage-card">
+        <div class="step-icon"><img src="../assets/stock.png" alt=""></div>
+        <h3>Stock Status</h3>
+        <table class="recap-table">
+          <thead><tr><th>Product</th><th>Qty</th><th>Unit</th></tr></thead>
+          <tbody>
+            <tr><td>Concentrate</td><td id="qteConcentre">1 250</td><td>kg</td></tr>
+            <tr><td>Hay</td><td id="qteFoin">180</td><td>bales</td></tr>
+            <tr><td>Vitamins</td><td id="qteVit">42</td><td>sacks</td></tr>
+          </tbody>
+        </table>
+        <button class="cta-btn" onclick="refresh()">Refresh</button>
+      </div>
+
+      <!-- CARD 2 : ALERTS -->
+      <div class="step manage-card">
+        
+        <div class="step-icon"><img src="../assets/alert.png" alt=""></div>
+        <h3>Alerts</h3>
+        <p id="msgAlerte">soybean meal &lt; 30% </p>
+        <button class="cta-btn" style="background:#e74c3c;" onclick="order()"> notification received?</button>
+      </div>
+
+      <!-- CARD 3 : ADD BATCH -->
+      <div class="step manage-card">
+        <div class="step-icon"><img src="../assets/add.png" alt=""></div>
+        <h3>Add Batch</h3>
+        <input type="text" id="prod" placeholder="Product (e.g. Maize)">
+        <input type="number" id="qte" placeholder="Quantity">
+        <button class="cta-btn" onclick="add()">Save</button>
+      </div>
+
+    </div>
+  </section>
+  <!-- ==========  FARM STATISTICS  ========== -->
+  <section class="how-section green-layer" style="padding: 60px 20px;">
+    <h2>Farm Statistics</h2>
+    <div class="steps manage-grid">
+
+      <!-- Total Feed Consumption -->
+      <div class="step manage-card">
+        <div class="step-icon"><img src="../assets/chart.png" alt=""></div>
+        <h3>Total Feed Consumption</h3>
+        <p><strong>28 650 kg</strong> of dry-matter consumed this month</p>
+        <table class="recap-table">
+          <tr><td>Concentrate</td><td>15 200 kg</td></tr>
+          <tr><td>Forage</td><td>10 450 kg</td></tr>
+          <tr><td>Supplements</td><td>3 000 kg</td></tr>
+        </table>
+      </div>
+
+      <!-- Production Balance -->
+      <div class="step manage-card">
+        <div class="step-icon"><img src="../assets/milk.png" alt=""></div>
+        <h3>Production Balance</h3>
+        <p><strong>24 780 L</strong> of milk produced this month</p>
+        <p>Average daily yield: <strong>28.5 L/cow</strong></p>
+        <p>Feed conversion: <strong>1.16 kg milk / kg DM</strong></p>
+      </div>
+
+      <!-- Feed Cost Summary -->
+      <div class="step manage-card">
+        <div class="step-icon"><img src="../assets/cost.png" alt=""></div>
+        <h3>Feed Cost Summary</h3>
+        <p><strong>2 870 000 DZD</strong> total feed cost this month</p>
+        <p>Cost per litre: <strong>116 DZD/L</strong></p>
+        <p>Cost per kg DM: <strong>100 DZD</strong></p>
+      </div>
+
+    </div>
+  </section>
+  <!-- ==========  END STATISTICS  ========== -->
+  <!-- FOOTER -->
+  <section class="cta-footer">
+    <h2>START SMARTER FEEDING TODAY</h2>
+    <p>Join thousands of farmers already using FeedTech</p>
+    <a href="user.html" class="cta-btn back-btn">Back to Dashboard</a>
+  </section>
+
+  <script src="../script.js"></script>
+  <script>
+    function refresh(){ alert('Stock refreshed!'); }
+    function order(){ alert('Order sent!'); }
+    function add(){
+      const p = document.getElementById('prod').value.trim();
+      const q = document.getElementById('qte').value.trim();
+      if(!p || !q) return alert('Please fill in the fields');
+      alert(`Batch ${q} ${p} added!`);
+      document.getElementById('prod').value = '';
+      document.getElementById('qte').value  = '';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FeedTech | Dashboard</title>
+
+  <!-- styles -->
+  <link rel="stylesheet" href="../css/index.css">
+  <link rel="stylesheet" href="../css/user.css?v=2">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Marko+One&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ===========================
+       SCAN OVERLAY (only once)
+  ============================ -->
+  <div id="scanOverlay" class="scan-overlay" style="display:none;">
+    <div class="scan-content">
+      <h1>Scan Your Animal RFID</h1>
+      <p>Use your device to scan the NFC tag of your animal.</p>
+      <div class="success">Scan successful! Redirecting...</div>
+    </div>
+  </div>
+<!-- SEARCH OVERLAY (hidden) -->
+<div id="searchOverlay" class="scan-overlay" style="display:none;">
+  <div class="scan-content">
+    <h1>Search Animal</h1>
+    <p>Enter ID or Race</p>
+    <input id="searchInputOverlay" placeholder="ID or Race" style="padding:8px;font-size:16px;">
+    <button id="searchConfirmBtn" class="cta-btn" style="margin-top:10px;">Search</button>
+  </div>
+</div>
+  <!-- ===========================
+       ANIMAL PROFILE OVERLAY (HIDDEN AT START)
+  ============================ -->
+  <!-- =========================== ANIMAL PROFILE ============================ -->
+<div id="animalProfileOverlay" class="how-section">
+  <div class="profile-card">
+    <button id="closeProfile" class="close-btn">✖</button>
+
+    <h3 id="animalName">Daisy</h3>
+
+    <ul class="animal-data">
+      <li><strong>Breed :</strong> <span id="race">Holstein</span></li>
+      <li><strong>ID :</strong> <span id="animalId">0001</span></li>
+      <li><strong>Sex :</strong> <span id="sex">Female</span></li>
+      <li><strong>Year of Birth :</strong> <span id="year">2022</span></li>
+      <li><strong>Weight :</strong> <span id="weight">500 kg</span></li>
+      <li><strong>Physiological State :</strong> <span id="state">Lactation</span></li>
+      <li><strong>NEC :</strong> <span id="nec">3</span></li>
+      <li><strong>Housing :</strong> <span id="stabulation">Loose</span></li>
+      <li><strong>Animal's needs :</strong> <span id="needs">-</span></li>
+    </ul>
+
+    <div class="profile-buttons">
+      <button class="cta-btn">Delete Or Modify</button>
+    </div>
+
+    <h2 class="recommendations-heading">Do you want to get food recommendations?</h2>
+    <button class="cta-btn">Get Recommendations</button>
+  </div>
+</div>
+
+  <!-- ===========================
+       LOGO
+  ============================ -->
+  <div class="logo">
+    <img src="../assets/logo.svg" class="logo">
+  </div>
+
+  <!-- ===========================
+       NAVIGATION
+  ============================ -->
+  <nav>
+    <ul>
+      <li><a href="user.html">Home</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#platforms">Our Platforms</a></li>
+   <li><a href="../pages/advices.html">Advices</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+      <li><a href="#contact">notif</a></li>
+    </ul>
+    <a href="../index.html" class="sign-in-btn">Logout</a>
+  </nav>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>FEED SMARTER,<br>GROW BETTER</h1>
+            <p>Effortlessly scan each animal's tag to access real-time data, feeding needs, and personalized nutrition plans—all in one smart platform for modern farms.</p>
+            <button class="cta-btn">Get started</button>
+        </div>
+       <div class="hero-image">
+    <img src="../assets/background.png" class="bg-img">
+    <img src="../assets/cows.png" class="overlay-img">
+</div>
+    </section>
+
+
+  <!-- ===========================
+       QUICK ACTIONS
+  ============================ -->
+  <section class="how-section green-layer">
+    <h2>Quick actions</h2>
+
+    <div class="steps">
+
+      <!-- Scan Button -->
+      <a href="#" class="step" id="scanStep">
+        <div class="step-icon"><img src="../assets/scan.png" alt=""></div>
+        <h3>Scan the Animal RFID tag</h3>
+        <p>Use your phone or tablet to scan your animal's unique NFC RFID tag and instantly access their profile.</p>
+      </a>
+
+      <!-- Check your farm -->
+      <a href="farm-list.html" class="step">
+        <div class="step-icon"><img src="../assets/farm.png" alt=""></div>
+        <h3>Check your Animals</h3>
+        <p>Go to your animals profile</p>
+      </a>
+<!-- Search by ID or Race -->
+ <a href="#" class="step" id="searchStep">
+  <div class="step-icon"><img src="../assets/search.png" alt=""></div>
+  <h3>Search by ID or Race</h3>
+  <p>Type an ID or Race and instantly access the animal’s profile.</p>
+</a>
+
+      <!-- Manage -->
+      <a href="manage.html" class="step">
+        <div class="step-icon"><img src="../assets/stock.png" alt=""></div>
+        <h3>Manage efficiently</h3>
+        <p>Track feeding logs, health metrics, and farm productivity all in one dashboard.</p>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ===========================
+       BANNER
+  ============================ -->
+  <section class="banner">
+    <img src="../assets/sheep.png" class="banner-bg" alt="Sheep">
+    <img src="../assets/layergreen.png" class="banner-bg" alt="Layer">
+    <h2>GIVE YOUR ANIMALS<br>EXACTLY WHAT THEY NEED<br>EVERY DAY.</h2>
+  </section>
+
+  <!-- ===========================
+       FAQ Section
+  ============================ -->
+  <section class="faq-section">
+    <h2>FAQ</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>How does the scanning work?</span>
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          Our system uses NFC (Near Field Communication) technology. Simply tap your phone or RFID/NFC reader against your animal's tag to access their complete information and receive personalized feeding recommendations.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Do I need internet for the platform to work?</span>
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          An internet connection is recommended for real-time data syncing. However, the app supports offline mode where you can still scan tags and access cached data.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>What information can I see about each animal?</span>
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          You can access health status, feeding history, nutritional requirements, weight tracking, vaccination records, and personalized recommendations for each animal.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Can it be used for large farms?</span>
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          Yes! FeedTech is designed to scale from small family farms to large commercial operations with hundreds or thousands of animals.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>How accurate are the feeding recommendations?</span>
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          Our AI algorithms are trained on thousands of farms and updated continuously. Accuracy improves over time as the system learns your farm's specific conditions and preferences.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===========================
+       CTA Footer
+  ============================ -->
+  <section class="cta-footer">
+    <h2>START SMARTER FEEDING<br>TODAY</h2>
+    <p>Join thousands of farmers already using FeedTech to optimize their operations</p>
+    <button class="cta-btn">Get started</button>
+
+    <div class="footer-content">
+      <div class="footer-left">
+        <div style="margin-top: 40px;">
+          <div class="logo">FeedTech</div>
+          <div class="social-links">
+            <a href="#" title="Facebook">f</a>
+            <a href="#" title="Twitter">𝕏</a>
+            <a href="#" title="Instagram">📷</a>
+            <a href="#" title="LinkedIn">in</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-right">
+        <div class="footer-col">
+          <h3>About us</h3>
+          <a href="#">Our Story</a>
+          <a href="#">Blog</a>
+          <a href="#">Careers</a>
+        </div>
+        <div class="footer-col">
+          <h3>Our Platforms</h3>
+          <a href="#">FeedTech Pro</a>
+          <a href="#">Analytics</a>
+          <a href="#">API</a>
+        </div>
+        <div class="footer-col">
+          <h3>How it Works</h3>
+          <a href="#">Features</a>
+          <a href="#">Pricing</a>
+          <a href="#">Support</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- FAQ Accordion Script -->
+  <script>
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', function() {
+        const faqItem = this.parentElement;
+        faqItem.classList.toggle('open');
+      });
+    });
+  </script>
+
+  <!-- Your scan overlay JS -->
+  <script src="../script.js"></script>
+  <script>
+  /* user.html – show ration when Get Recommendations is clicked */
+  document.getElementById('animalProfileOverlay')
+          .addEventListener('click', e => {
+            if (e.target.classList.contains('cta-btn')) {
+              alert(
+                'The food ration is:\n\n' +
+                'Ensilage = 7,41 kg.MS/J\n' +
+                'Concentré = 10,58 kg.MS/J\n' +
+                'Fourrage = 5,99 kg.MS/J'
+              );
+            }
+          });
+</script>
+
+</body>
+</html>
